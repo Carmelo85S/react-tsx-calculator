@@ -1,61 +1,59 @@
 import { useState } from 'react';
-import './App.css';
+import Calculator from './components/Calculator';
 
 const App = () => {
-  const [result, setResult] = useState<string>("");
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    setResult(result.concat(e.currentTarget.id));
-  };
-  
+  const [backgroundColor, setBackgroundColor] = useState<string>("blue");
+  const [buttonColor, setButtonColor] = useState<string>("orange");
+  const [color, setColor] = useState<string>("yellow");
+  const [resultColor, setResultColor] = useState<string>("white");
 
-  const clear = ():void => setResult("");
+  const changeBackgroundColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBackgroundColor(e.target.value);
+  }
 
-  const deleteEl = ():void => setResult(result.slice(0, -1));
+  const changeButtonColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setButtonColor(e.target.value);
+  }
 
-  const calculate = ():void => {
-    try {
-      setResult(eval(result).toString());
-    } catch (error) {
-      setResult("Error");
-    }
-  };
+  const changeTextColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setColor(e.target.value);
+  }
+
+  const changeResultColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setResultColor(e.target.value);
+  }
+
+  const colorOptions = [
+    { id: "BackgroundColor", label: "Background Color", value: backgroundColor, onChange: changeBackgroundColor },
+    { id: "ButtonColor", label: "Button Color", value: buttonColor, onChange: changeButtonColor },
+    { id: "TextColor", label: "Text Color", value: color, onChange: changeTextColor },
+    { id: "ResultColor", label: "Result Color", value: resultColor, onChange: changeResultColor },
+  ];
 
   return (
-    <div className="calculator">
-      <input type="text" value={result} disabled />
+    <section className="p0 m0 bg-slate-800 flex justify-center items-center flex-col-reverse h-screen">
+      <section className="flex justify-center items-center flex-row py-10">
+        {colorOptions.map(({ id, label, value, onChange }) => (
+          <div key={id} className="py-4 px-5 flex justify-center items-center flex-col">
+            <label className="text-white" htmlFor={id}>{label}</label>
+            <input
+              className="w-12 h-12 cursor-pointer border-2 border-gray-300 rounded-lg"
+              type="color"
+              value={value}
+              onChange={onChange}
+            />
+          </div>
+        ))}
+      </section>
 
-      <div className="buttons">
-        <button className="operator" onClick={clear}>AC</button>
-        <button className="operator" onClick={deleteEl}>DE</button>
-
-        <button id="." className="operator" onClick={handleClick}>.</button>
-        <button id="/" className="operator" onClick={handleClick}>/</button>
-
-        <button id="7" className="number" onClick={handleClick}>7</button>
-        <button id="8" className="number" onClick={handleClick}>8</button>
-        <button id="9" className="number" onClick={handleClick}>9</button>
-
-        <button id="*" className="operator" onClick={handleClick}>*</button>
-
-        <button id="4" className="number" onClick={handleClick}>4</button>
-        <button id="5" className="number" onClick={handleClick}>5</button>
-        <button id="6" className="number" onClick={handleClick}>6</button>
-
-        <button id="-" className="operator" onClick={handleClick}>-</button>
-
-        <button id="1" className="number" onClick={handleClick}>1</button>
-        <button id="2" className="number" onClick={handleClick}>2</button>
-        <button id="3" className="number" onClick={handleClick}>3</button>
-
-        <button id="+" className="operator" onClick={handleClick}>+</button>
-
-        <button id="00" className="number" onClick={handleClick}>00</button>
-        <button id="0" className="number" onClick={handleClick}>0</button>
-
-        <button id="=" className="operator col-span-2" onClick={calculate}>=</button>
-      </div>
-    </div>
+      <Calculator
+        backgroundColor={backgroundColor}
+        color={color}
+        buttonColor={buttonColor}
+        resultColor={resultColor} 
+      />
+    </section>
   );
 };
 
