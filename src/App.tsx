@@ -8,19 +8,19 @@ const App = () => {
   const [color, setColor] = useState<string>("yellow");
   const [resultColor, setResultColor] = useState<string>("white");
 
-  const changeBackgroundColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeBackgroundColor = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setBackgroundColor(e.target.value);
   }
 
-  const changeButtonColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeButtonColor = (e: React.ChangeEvent<HTMLInputElement>):void =>{
     setButtonColor(e.target.value);
   }
 
-  const changeTextColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeTextColor = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setColor(e.target.value);
   }
 
-  const changeResultColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeResultColor = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setResultColor(e.target.value);
   }
 
