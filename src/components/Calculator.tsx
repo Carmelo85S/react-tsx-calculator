@@ -39,34 +39,37 @@ const Calculator = ({ backgroundColor, buttonColor, color, resultColor }: Calcul
         style:React.CSSProperties;
     }
 
+    const numberStyle:string = "bg-slate-300 text-blue-700 rounded-lg p-2";
+    const functionalityStyle:string = "bg-blue-500 text-white rounded-lg p-2";
+
     const buttonsList: ButtonInterface[] = [
-        {id:"AC", className:"bg-blue-500 text-white rounded-lg p-2", onClick: clear, style:buttonStyle},
-        {id:"DE", className:"bg-blue-500 text-white rounded-lg p-2", onClick:deleteEl, style:buttonStyle},
-        {id:".", className:"bg-blue-500 text-white rounded-lg p-2", onClick: handleClick, style:buttonStyle},
-        {id:"/", className:"bg-blue-500 text-white rounded-lg p-2", onClick: handleClick, style:buttonStyle},
+        {id:"AC", className:functionalityStyle, onClick: clear, style:buttonStyle},
+        {id:"DE", className:functionalityStyle, onClick:deleteEl, style:buttonStyle},
+        {id:".", className:functionalityStyle, onClick: handleClick, style:buttonStyle},
+        {id:"/", className:functionalityStyle, onClick: handleClick, style:buttonStyle},
 
-        {id:"7", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick: handleClick, style:buttonStyle},
-        {id:"8", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick: handleClick, style:buttonStyle},
-        {id:"9", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick: handleClick, style:buttonStyle},
+        {id:"7", className:numberStyle, onClick: handleClick, style:buttonStyle},
+        {id:"8", className:numberStyle, onClick: handleClick, style:buttonStyle},
+        {id:"9", className:numberStyle, onClick: handleClick, style:buttonStyle},
 
-        {id:"*", className:"bg-blue-500 text-white rounded-lg p-2", onClick:handleClick, style:buttonStyle},
+        {id:"*", className:functionalityStyle, onClick:handleClick, style:buttonStyle},
 
-        {id:"4", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
-        {id:"5", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
-        {id:"6", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
+        {id:"4", className:numberStyle, onClick:handleClick, style:buttonStyle},
+        {id:"5", className:numberStyle, onClick:handleClick, style:buttonStyle},
+        {id:"6", className:numberStyle, onClick:handleClick, style:buttonStyle},
 
-        {id:"-", className:"bg-blue-500 text-white rounded-lg p-2", onClick:handleClick, style:buttonStyle},
+        {id:"-", className:functionalityStyle, onClick:handleClick, style:buttonStyle},
 
-        {id:"1", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
-        {id:"2", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
-        {id:"3", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
+        {id:"1", className:numberStyle, onClick:handleClick, style:buttonStyle},
+        {id:"2", className:numberStyle, onClick:handleClick, style:buttonStyle},
+        {id:"3", className:numberStyle, onClick:handleClick, style:buttonStyle},
 
-        {id:"+", className:"bg-blue-500 text-white rounded-lg p-2", onClick:handleClick, style:buttonStyle},
+        {id:"+", className:functionalityStyle, onClick:handleClick, style:buttonStyle},
 
-        {id:"00", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
-        {id:"0", className:"bg-slate-300 text-blue-700 rounded-lg p-2", onClick:handleClick, style:buttonStyle},
+        {id:"00", className:numberStyle, onClick:handleClick, style:buttonStyle},
+        {id:"0", className:numberStyle, onClick:handleClick, style:buttonStyle},
 
-        {id:"=", className:"bg-blue-500 text-white rounded-lg p-2", onClick:calculate, style:buttonStyle},
+        {id:"=", className:functionalityStyle, onClick:calculate, style:buttonStyle},
     ]
 
     return (
