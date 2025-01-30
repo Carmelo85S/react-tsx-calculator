@@ -8,7 +8,8 @@ interface ColorPickerProps {
     resultColor: string;
     setResultColor: (color: string) => void;
   }
-  
+
+  //Allow users to select and update different calculator section with the choosen color
   const ColorPicker = ({
     backgroundColor, setBackgroundColor,
     buttonColor, setButtonColor,
@@ -16,6 +17,7 @@ interface ColorPickerProps {
     resultColor, setResultColor
   }: ColorPickerProps) => {
   
+  //Properties for each color input field.
     const colorOptions = [
         { 
             id: "BackgroundColor",
@@ -44,6 +46,8 @@ interface ColorPickerProps {
     
     return (
       <section className="flex justify-center items-center flex-row py-10">
+        
+        {/* Generate color picker inputs based on colorOptions array. */}
         {colorOptions.map(({ id, label, value, onChange }) => (
           <div key={id} className="py-4 px-5 flex justify-center items-center flex-col">
             <label className="text-white" htmlFor={id}>{label}</label>
