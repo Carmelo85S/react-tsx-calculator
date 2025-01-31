@@ -20,6 +20,7 @@ const App = () => {
         color={color} setColor={setColor}
         resultColor={resultColor} setResultColor={setResultColor}
       />
+      
       {/*Calculator component receive color props*/}
       <Calculator
         backgroundColor={backgroundColor}

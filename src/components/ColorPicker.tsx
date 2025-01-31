@@ -1,3 +1,4 @@
+//Props are passed in interface
 interface ColorPickerProps {
     backgroundColor: string;
     setBackgroundColor: (color: string) => void;
@@ -19,28 +20,17 @@ interface ColorPickerProps {
   
   //Properties for each color input field.
     const colorOptions = [
-        { 
-            id: "BackgroundColor",
-            label: "Background Color", 
-            value: backgroundColor, 
-            onChange: (e: React.ChangeEvent<HTMLInputElement>) => setBackgroundColor(e.target.value) 
+        { id: "BackgroundColor", label: "Background Color", 
+          value: backgroundColor, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setBackgroundColor(e.target.value) 
         },
-        { 
-            id: "ButtonColor", 
-            label: "Button Color", 
-            value: buttonColor, 
-            onChange: (e: React.ChangeEvent<HTMLInputElement>) => setButtonColor(e.target.value) 
+        { id: "ButtonColor", label: "Button Color", 
+          value: buttonColor, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setButtonColor(e.target.value) 
         },
-        { 
-            id: "TextColor", 
-            label: "Text Color", 
-            value: color, 
-            onChange: (e: React.ChangeEvent<HTMLInputElement>) => setColor(e.target.value) 
+        { id: "TextColor", label: "Text Color", 
+          value: color, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setColor(e.target.value) 
         },
-        { 
-            id: "ResultColor", 
-            label: "Result Color", 
-            value: resultColor, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setResultColor(e.target.value) 
+        { id: "ResultColor", label: "Result Color", 
+          value: resultColor, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setResultColor(e.target.value) 
         },
       ];
     
